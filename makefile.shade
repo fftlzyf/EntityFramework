@@ -46,7 +46,7 @@ k-standard-goals
 
 #repack-tools .remove-intermediates target='compile' if='Directory.Exists("src") && !IsTravisCi'
   @{
-        var configurationX86 = E("Configuration").ToLower() + "_x86";
+        var configurationX86 = E("Configuration") + "_x86";
         DotnetBuild("src/Tools.Console", configurationX86, "net451");
         Dotnet("restore tools/");
         Dotnet("run -p tools/CommandsPackager " + E("Configuration"));

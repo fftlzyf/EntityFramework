@@ -563,11 +563,11 @@ function GetDotNetArguments($startupProject, $outputFileName) {
     if ($tfm -like 'net45*' -or $tfm -like 'net46*') {
         # TODO get the actual output file from VS when/if CPS API's become available
         $startupOutputFileName = "$assemblyName.exe"
-        #TODO determine if desktop app is x86 or has a different runtimes
+        # TODO determine if desktop app is x86 or has a different runtimes
         $outputPath = Join-Path $outputPath "$config/$tfm/win7-x64/"
         $exe = Join-Path $PSScriptRoot 'net451/ef.exe'
     } elseif ($tfm -eq 'netcoreapp1.0') {
-        #TODO handle self-contained apps
+        # TODO handle self-contained apps
 
         $outputPath = Join-Path $outputPath "$config/$tfm"
         $exe = GetDotNet

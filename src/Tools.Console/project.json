@@ -16,7 +16,7 @@
     "keyFile": "../../tools/Key.snk"
   },
   "configurations": {
-    "debug_x86": {
+    "Debug_x86": {
       "buildOptions": {
         "platform": "anycpu32bitpreferred",
         "define": [
@@ -25,7 +25,7 @@
         "outputName": "ef.x86"
       }
     },
-    "release_x86": {
+    "Release_x86": {
       "buildOptions": {
         "platform": "anycpu32bitpreferred",
         "outputName": "ef.x86"
