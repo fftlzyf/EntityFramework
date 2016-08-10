@@ -195,7 +195,7 @@ function Update-Database {
 
     Hint-Upgrade $MyInvocation.MyCommand
     $values = ProcessCommonParameters $StartupProject $Project $Context $Environment
-    if (IsUwpProject $value.Project) {
+    if (IsUwpProject $values.Project) {
         throw 'Update-Database should not be used with Universal Windows apps. Instead, call DbContext.Database.Migrate() at runtime.'
     }
 
@@ -614,14 +614,12 @@ function GetCsprojArguments($startupProject, $outputFileName) {
     }
 
     $arch = GetProperty $startupProject.ConfigurationManager.ActiveConfiguration.Properties PlatformTarget
+    Write-Verbose "Using architecture '$arch'"
     if ($arch -eq 'x86') {
-        Write-Verbose 'Using architecture x86'
         $exe = Join-Path $PSScriptRoot 'net451/ef.x86.exe'
     } else {
         if ($arch -ne 'AnyCPU' -and $arch -ne 'x64') {
-            Write-Verbose "Unrecognized architecture '$arch'. Falling back to x64."
-        } else {
-            Write-Verbose "Using architecture $arch"
+            Write-Warning "The startup project targets an unrecognized architecture: '$arch'. This operation will attempt to fallback to 'AnyCPU'."
         }
 
         $exe = Join-Path $PSScriptRoot 'net451/ef.exe'
