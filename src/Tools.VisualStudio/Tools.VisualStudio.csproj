@@ -36,6 +36,8 @@
   <ItemGroup>
     <Compile Include="Internal\ArgumentEscaper.cs" />
     <Compile Include="Internal\InvokeProcessCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="project.json" />
     <None Include="project.nuspec" />
     <None Include="tools\about_EntityFrameworkCore.help.txt" />
     <None Include="tools\EntityFrameworkCore.PowerShell2.psd1" />
