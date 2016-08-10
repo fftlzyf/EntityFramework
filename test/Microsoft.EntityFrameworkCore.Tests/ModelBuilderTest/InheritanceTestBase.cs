@@ -16,6 +16,7 @@ namespace Microsoft.EntityFrameworkCore.Tests
     {
         public abstract class InheritanceTestBase : ModelBuilderTestBase
         {
+            //TODO: inherited containing indexes
             [Fact]
             public virtual void Can_set_and_remove_base_type()
             {
@@ -24,8 +25,6 @@ namespace Microsoft.EntityFrameworkCore.Tests
                 var pickleBuilder = modelBuilder.Entity<Pickle>();
                 pickleBuilder.HasOne(e => e.BigMak).WithMany(e => e.Pickles);
                 var pickle = pickleBuilder.Metadata;
-                // TODO: Remove this line
-                // Issue #2837
                 modelBuilder.Entity<BigMak>().Ignore(b => b.Bun);
 
                 Assert.Null(pickle.BaseType);
