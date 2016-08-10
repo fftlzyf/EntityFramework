@@ -1,8 +1,7 @@
 ﻿// Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
-using System;
-using Microsoft.EntityFrameworkCore.Tools.VisualStudio;
+using Microsoft.EntityFrameworkCore.Tools.VisualStudio.Internal;
 using Xunit;
 
 namespace Microsoft.EntityFrameworkCore.Tools.VisualStudio.Tests
@@ -19,6 +18,6 @@ namespace Microsoft.EntityFrameworkCore.Tools.VisualStudio.Tests
         [InlineData(new[] { @"C:\Program Files\dotnet\" }, @"""C:\Program Files\dotnet\\""")]
         [InlineData(new[] { @"backslash\""preceedingquote" }, @"backslash\\\""preceedingquote")]
         public void EscapesArguments(string[] args, string expected)
-          => Assert.Equal(expected, ArgumentEscaper.Escape(args));
+            => Assert.Equal(expected, ArgumentEscaper.Escape(args));
     }
 }

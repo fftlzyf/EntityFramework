@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ArgumentEscaper.cs" />
-    <Compile Include="InvokeProcessCommand.cs" />
+    <Compile Include="Internal\ArgumentEscaper.cs" />
+    <Compile Include="Internal\InvokeProcessCommand.cs" />
     <None Include="project.nuspec" />
     <None Include="tools\about_EntityFrameworkCore.help.txt" />
     <None Include="tools\EntityFrameworkCore.PowerShell2.psd1" />

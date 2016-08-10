@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Microsoft.EntityFrameworkCore.Tools.VisualStudio
+namespace Microsoft.EntityFrameworkCore.Tools.VisualStudio.Internal
 {
     public static class ArgumentEscaper
     {

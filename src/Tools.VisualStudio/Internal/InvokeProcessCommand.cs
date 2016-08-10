@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.EntityFrameworkCore.Tools.VisualStudio
+namespace Microsoft.EntityFrameworkCore.Tools.VisualStudio.Internal
 {
     /// <summary>
     ///     <para>
